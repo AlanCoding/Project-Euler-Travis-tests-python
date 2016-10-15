@@ -7,3 +7,9 @@ def problem1():
 	## Example solution
 	# return sum([i if (i % 5 == 0 or i % 3 == 0) else 0 for i in range(1000)])
 	return 0
+
+def problem2():
+	'''
+	Sum of even Fibonacci sequence up to 4 million
+	'''
+	return 0
