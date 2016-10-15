@@ -11,6 +11,16 @@ def F(n):
 		(2**n*sqrt(5))
 	)
 
+def primes(n):
+	""" Returns  a list of primes < n """
+	# http://stackoverflow.com/questions/2068372/fastest-way-to-list-all-primes-below-n/3035188#3035188
+	sieve = [True] * n
+	for i in range(3,int(n**0.5)+1,2):
+		if sieve[i]:
+			sieve[i*i::2*i]=[False]*int((n-i*i-1)/(2*i)+1)
+	return [2] + [i for i in range(3,n,2) if sieve[i]]
+
+# Tests of the solutions themselves
 def test_problem1():
 	ans = problems.problem1()
 	assert type(ans) == int
@@ -33,4 +43,14 @@ def test_problem2():
 			break
 		ans -= Fval
 	assert ans == 0
+
+def test_problem3():
+	ans = problems.problem3()
+	num = 600851475143
+	lesser_primes = primes(ans)
+	reduced_num = num
+	for prime in lesser_primes + [ans]:
+		while reduced_num % prime == 0:
+			reduced_num = int(reduced_num / prime)
+	assert reduced_num == 1
 

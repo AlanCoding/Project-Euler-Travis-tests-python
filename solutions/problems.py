@@ -9,7 +9,9 @@ def problem1():
 	return 0
 
 def problem2():
-	'''
-	Sum of even Fibonacci sequence up to 4 million
-	'''
+	"Sum of even Fibonacci sequence up to 4 million"
 	return 0
+
+def problem3():
+	"largest prime factor of 600851475143"
+	return 53
