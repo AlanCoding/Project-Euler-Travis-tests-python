@@ -15,3 +15,7 @@ def problem2():
 def problem3():
 	"largest prime factor of 600851475143"
 	return 53
+
+def problem4():
+	"largest plaindrome made from product of 3-digit numbers"
+	return 101*101

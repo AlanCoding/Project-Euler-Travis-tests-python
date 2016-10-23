@@ -54,3 +54,17 @@ def test_problem3():
 			reduced_num = int(reduced_num / prime)
 	assert reduced_num == 1
 
+def is_plaindrome(n):
+    ans_str = str(n)
+    for i in range(int(len(ans_str)/2)):
+        if ans_str[i] != ans_str[-i-1]:
+            return False
+    return True
+
+def test_problem4():
+    ans = problems.problem4()
+    assert is_plaindrome(ans)
+    n_ref = int(sqrt(ans))
+    for i in range(n_ref+1, 999):
+        for j in range(n_ref, 999):
+            assert not is_plaindrome(i*j)
